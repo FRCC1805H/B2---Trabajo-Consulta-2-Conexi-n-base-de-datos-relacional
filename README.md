@@ -87,6 +87,7 @@ Desde Scala establezca la conexión a la base datos
 
 
 
+```msql
 -- Crear la base de datos
 CREATE DATABASE ejemplo_db;
 
@@ -108,9 +109,11 @@ INSERT INTO empleados (nombre, puesto, salario) VALUES
 ('Clara López', 'Gerente', 60000.00);
 
 
+```
 
 
 
+```scala
 // build.sbt
 lazy val root = (project in file("."))
   .settings(
@@ -127,8 +130,10 @@ libraryDependencies ++= Seq(
 )
 
 
+```
 
 
+```scala
 import slick.jdbc.MySQLProfile.api._
 
 import scala.concurrent.Await
@@ -171,7 +176,11 @@ object ConexionMySQL {
   }
 }
 
+```
 
+
+
+```scala
 import java.sql.{Connection, DriverManager, ResultSet}
 
 object ConexionMySQLJDBC {
@@ -208,3 +217,5 @@ object ConexionMySQLJDBC {
     }
   }
 }
+
+```
